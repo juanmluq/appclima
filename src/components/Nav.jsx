@@ -9,11 +9,6 @@ import About from './About';
 function Nav({onSearch}) {
   return (
     <nav className="nav nav-tabs">
-      {/* <NavLink to="/">
-        <span className="navbar-brand">
-           Weather App
-        </span>
-        </NavLink> */}
          <li class="nav-item">
     <a class="nav-link active" aria-current="page" href="/">Wheather App</a>
   </li>
