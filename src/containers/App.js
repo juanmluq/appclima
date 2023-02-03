@@ -6,11 +6,7 @@ import Cards from '../components/Cards.jsx';
 import About from '../components/About';
 import Ciudad from '../components/Ciudad';
 import { Route, Switch } from 'react-router-dom';
-// import apiKey from "./.env"
 const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
-// const {
-//   apiKey,
-// } = process.env;
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -88,4 +84,3 @@ function App() {
 }
 
 export default App;
-//exporto App para que lo tome index.js 
