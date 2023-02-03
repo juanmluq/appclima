@@ -8,7 +8,7 @@ Iniciar
 Clona el repositorio y haz `npm install` y `npm start` en la carpeta raiz
 
 
-ya puedes usar la página!
+ya puedes usar la página o puedes verla aqui: http://appclima-juanmluq.vercel.app/
 
 
 En esta pagina utilizamos una api del clima.
