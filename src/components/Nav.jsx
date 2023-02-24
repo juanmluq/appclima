@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from '../img/logoHenry.png'
 import SearchBar from './SearchBar.jsx';
 import {Link, NavLink} from 'react-router-dom';
 import './Nav.css';
