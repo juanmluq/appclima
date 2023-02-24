@@ -14,10 +14,10 @@ function App() {
     setCities(oldCities => oldCities.filter(c => c.id !== id));
   }
   function onSearch(ciudad) {// con esta funcion busco la ciudad para mostrarla en pantalla
-    //Llamado a la API del clima
     fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${apiKey}`)
-      .then(r => r.json()) //cuando tengo la respuesta de la api devuelvo un json
-      .then((recurso) => { //despues tengo otra funcion que me dice si respuesta.main es distinta de undefined creo un 
+      .then(r => r.json()) 
+      .then((recurso) => { 
+      //despues tengo otra funcion que me dice si respuesta.main es distinta de undefined creo un 
         //objeto ciudad con info del clima 
         if(recurso.main !== undefined){
           const ciudad = {
@@ -33,15 +33,14 @@ function App() {
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon
           };
-          setCities(oldCities => [...oldCities, ciudad]); //funcion que le paso oldCities y creo un arreglo con las oldcities y pusheo ciudad
+          setCities(oldCities => [...oldCities, ciudad]); //funcion que le paso oldCities y creo un arreglo con las oldcities y pusheo la ciudad
         } else {
           alert("Ciudad no encontrada");// si la respuesta.main es undefined mando el alerta
         }
       });
   }
   function onFilter(ciudadId) {
-    let ciudad = cities.filter(c => c.id === parseInt(ciudadId));// cities es un arreglo y con .filter hago que se filtren
-    //las ciudades por id
+    let ciudad = cities.filter(c => c.id === parseInt(ciudadId));
     //paseInt se asegura que la ciudadId que recibe sea un entero
     if(ciudad.length > 0) {
         return ciudad[0];
@@ -63,22 +62,10 @@ function App() {
         />
         </Route>
 
-      <Route path="/about"><About/></Route>  {/* llamo about desde aca. si lo hago desde el nav 
-      me aparece lo que tengo en about en la pantalla principal  */}
+      <Route path="/about"><About/></Route>  
       <Route path="/ciudad/:id" render={({match})=>
-       <Ciudad city={onFilter(match.params.id)} /> } /> {/* El render nos sirve para poder
-       pasar props (en este caso la props match) a nuestro componente. si no lo hago de esta forma 
-       no tengo como decirle que me traiga el id. 
-         le digo que haga el render
-        y le paso el match que es lo que tiene mi props(las props
-         tienen: history, match, location). haciendo match.params estoy diciendo que busque 
-         un parametro en particular.. en este caso id por eso pongo match.params.id.
-         Dato: le paso el match entre {} porque
-          hago destructuring.. sino deberia escribir render={(props.match) => <ciudad
-          city={onfilter(props.match.params.id)}/>} 
-          despues la funcion dice que pasandole match.params.id retorno null o el valor de la ciudad
-         city */}
-      </Switch>
+      <Ciudad city={onFilter(match.params.id)} /> } /> 
+     </Switch>
     </div>
   );
 }
