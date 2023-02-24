@@ -4,7 +4,6 @@ import SearchBar from './SearchBar.jsx';
 import {Link, NavLink} from 'react-router-dom';
 import './Nav.css';
 import About from './About';
-// el navlink permite modificar los estilos al link.
 
 function Nav({onSearch}) {
   return (
@@ -15,7 +14,6 @@ function Nav({onSearch}) {
   <li class="nav-item">
     <a class="nav-link" href="/about">Acerca de mi</a>
   </li>
-        {/* <Link to= "/about">About</Link> */}
         <div className='search'>
           <SearchBar
           onSearch={onSearch}
