@@ -6,7 +6,7 @@ import Cards from '../components/Cards.jsx';
 import About from '../components/About';
 import Ciudad from '../components/Ciudad';
 import { Route, Switch } from 'react-router-dom';
-const apikey = process.env.apikey;
+const apiKey = process.env.apikey;
 //const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
 
 function App() {
